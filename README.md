@@ -1303,6 +1303,16 @@ strings.
   implements a collection of unordered values with no duplicates. This
   is a hybrid of `Array`'s intuitive inter-operation facilities and
   `Hash`'s fast lookup.
+* Prefer 1.8 style hash syntax
+
+    ```Ruby
+    # bad
+    hash = { one: 1, two: 2, three: 3 }
+
+    # good
+    hash = { :one => 1, :two => 2, :three => 3 }
+    ```
+
 * Prefer symbols instead of strings as hash keys.
 
     ```Ruby
@@ -1310,18 +1320,18 @@ strings.
     hash = { 'one' => 1, 'two' => 2, 'three' => 3 }
 
     # good
-    hash = { one: 1, two: 2, three: 3 }
+    hash = { :one => 1, :two => 2, :three => 3 }
     ```
 
 * Avoid the use of mutable objects as hash keys.
-* Use the hash literal syntax when your hash keys are symbols.
+* Use the 1.8 style hash syntax even when your hash keys are symbols.
 
     ```Ruby
     # bad
-    hash = { :one => 1, :two => 2, :three => 3 }
+    hash = { one: 1, two: 2, three: 3 }
 
     # good
-    hash = { one: 1, two: 2, three: 3 }
+    hash = { :one => 1, :two => 2, :three => 3 }
     ```
 
 * Use `fetch` when dealing with hash keys that should be present.
